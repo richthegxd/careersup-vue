@@ -1,0 +1,15 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-brand-black-1 font-medium;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
