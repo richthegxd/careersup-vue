@@ -3,8 +3,8 @@ import { Context } from "./interfaces/actions.interface";
 
 // * Constants
 import {
-  FETCH_JOBS,
-  FETCH_JOB,
+  FETCH_JOB_BY_IDS,
+  FETCH_JOB_BY_ID,
   FETCH_DEGREES,
   RECEIVE_JOBS,
   RECEIVE_JOB,
@@ -15,12 +15,12 @@ import {
 import { serverGetJobs, serverGetJobById, serverGetDegrees } from "@/services";
 
 const actions = {
-  [FETCH_JOBS]: async (context: Context) => {
+  [FETCH_JOB_BY_IDS]: async (context: Context) => {
     const jobListings = await serverGetJobs();
     context.commit(RECEIVE_JOBS, jobListings);
   },
 
-  [FETCH_JOB]: async (context: Context, id: number) => {
+  [FETCH_JOB_BY_ID]: async (context: Context, id: number) => {
     const job = await serverGetJobById(id);
     context.commit(RECEIVE_JOB, job);
   },

@@ -14,9 +14,9 @@ import {
   UNIQUE_JOB_TYPES,
   UNIQUE_ORGANIZATIONS,
   UNIQUE_DEGREES,
-  FETCH_JOBS,
+  FETCH_JOB_BY_IDS,
   FETCH_DEGREES,
-  FETCH_JOB,
+  FETCH_JOB_BY_ID,
   ADD_JOB_TO_FAVORITES,
   REMOVE_JOB_FROM_FAVORITES,
 } from "../constants";
@@ -71,7 +71,7 @@ export const useUniqueDegrees = () => {
 // * Actions
 export const useFetchJobsDispatch = async () => {
   const store = useStore(key);
-  await store.dispatch(FETCH_JOBS);
+  await store.dispatch(FETCH_JOB_BY_IDS);
 };
 
 export const useFetchDegreesDispatch = async () => {
@@ -81,7 +81,7 @@ export const useFetchDegreesDispatch = async () => {
 
 export const useFetchJobDispatch = async (id: number) => {
   const store = useStore(key);
-  await store.dispatch(FETCH_JOB, id);
+  await store.dispatch(FETCH_JOB_BY_ID, id);
 };
 
 // * Favorites job
